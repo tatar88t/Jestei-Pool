@@ -1,0 +1,109 @@
+.footer {
+  background: #414141;
+  padding: 90px 0 82px 0;
+  &__content {
+    display: flex;
+    justify-content: space-between;
+    align-items: flex-end;
+    &-links {
+      flex-basis: 42%;
+      font-size: 27px;
+      & a {
+
+        display: block;
+        text-decoration: none;
+        color: rgba(255,255,255,0.65);
+        font-weight: 300;
+        & span {
+          font-size: 22px;
+        }
+      }
+    }
+    &-social {
+      flex-basis: 16%;
+      display: flex;
+      justify-content: space-around;
+    }
+    &-credits {
+      flex-basis: 42%;
+      text-align: right;
+      & a {
+        color: rgba(255,255,255,0.7);
+        font-size: 22px;
+        margin-right: 20px;
+        background: none;
+        outline: none;
+        cursor: pointer;
+        position: relative;
+        text-decoration: none;
+        font-weight: 300;
+        &:after {
+          content: url("../../../img/arrow-up-grey.png");
+          position: absolute;
+          right: -18px;
+        }
+      }
+      &-author {
+        font-weight: 300;
+        color: rgba(255,255,255,0.4);
+        font-size: 20px;
+        margin-top: 30px;
+      }
+    }
+  }
+}
+@media(max-width: 767px) {
+  .footer {
+    padding: 25px 0 28px 0;
+    &__content {
+      &-links {
+        & a {
+          & span {
+            font-size: 17px;
+          }
+        }
+      }
+      &-social {
+        flex-basis: 25%;
+      }
+      &-credits {
+        & a {
+          font-size: 18px;
+        }
+        &-author {
+          font-size: 16px;
+        }
+      }
+    }
+  }
+}
+@media(max-width: 575px) {
+  .footer{
+    padding-top: 10px;
+    &__content {
+      display: block;
+      &-links {
+        display: flex;
+        flex-direction: column-reverse;
+        align-items: center;
+      }
+
+      &-social {
+        margin: 10px 0;
+        margin-left: 12px;
+      }
+      &-credits {
+        margin: 0 auto;
+        text-align: center;
+        & a {
+
+        }
+        //display: flex;
+        &-author {
+          margin-top: 14px;
+
+        }
+      }
+    }
+  }
+}
