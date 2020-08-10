@@ -1,4 +1,6 @@
 import showMenu from "./modules/showMenu";
+import showPlaylistFeatures from "./modules/showPlaylistFeatures";
+import rating from "./modules/rating";
 
 new WOW().init();
 
@@ -29,3 +31,5 @@ $(".footer__up, .benefits__button a").click(function(){
 
 
 showMenu();
+showPlaylistFeatures();
+rating();

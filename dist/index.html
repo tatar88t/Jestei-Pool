@@ -6,11 +6,7 @@
           content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.0.0/animate.min.css"/>
-    <link rel="stylesheet" href="css/animate.css">
     <link rel="stylesheet" href="css/style.css">
-<!--    <script>-->
-<!--        new WOW().init();-->
-<!--    </script>-->
     <title>Document</title>
 </head>
 <body>
@@ -23,6 +19,14 @@
             <li class="menu_item"><a href="#" class="menu_link">Help</a></li>
             <li class="menu_item"><a href="#" class="menu_link">Profile</a></li>
             <li class="menu_item"><a href="#" class="menu_link">Exit</a></li>
+            <div class="menu__search">
+                <form class="menu__search-form ">
+                    <input placeholder="поиск..." type="text">
+                    <button>
+                        <img src="./img/lens-icon.png" alt="Лупа">
+                    </button>
+                </form>
+            </div>
         </ul>
         <div class="container">
 
@@ -31,9 +35,12 @@
                     <img src="./img/logo-jestei-pool.png" alt="Логотип" class="header__logo-img">
                 </a>
                 <div class="header__search">
-                    <div class="header__search-width">
+                    <form class="header__search-width">
                         <input placeholder="поиск..." type="text">
-                    </div>
+                        <button>
+                            <img src="./img/lens-icon.png" alt="Лупа">
+                        </button>
+                    </form>
 
                 </div>
                 <div class="header__burger">
@@ -44,13 +51,25 @@
                 <nav class="header__menu">
 
                     <ul class = "header__list">
-                        <li>Latest Sets</li>
-                        <li><a href="#"><img src="./img/editor-icon.png" alt=""></a></li>
-                        <li><a href="#"><img src="./img/arrow-icon.png" alt=""></a></li>
-                        <li><a href="#"><img src="./img/star-icon.png" alt=""></a></li>
-                        <li><a href="#"><img src="./img/help-icon.png" alt=""></a></li>
-                        <li><a href="#"><img src="./img/account-icon.png" alt=""></a></li>
-                        <li><a href="#"><img src="./img/exit-icon.png" alt=""></a></li>
+                        <li><a href="#">Latest Sets</a></li>
+                        <li class = "header__list-editor">
+                            <a href="#">
+                        </a></li>
+                        <li class = "header__list-add">
+                            <a href="#"></a>
+                        </li>
+                        <li class = "header__list-favorites">
+                            <a href="#"></a>
+                        </li>
+                        <li class = "header__list-help">
+                            <a href="#"></a>
+                        </li>
+                        <li class = "header__list-profile">
+                            <a href="#"></a>
+                        </li>
+                        <li class = "header__list-exit">
+                            <a href="#"></a>
+                        </li>
                     </ul>
                 </nav>
             </div>
@@ -59,9 +78,9 @@
     <section class="promo" id="up">
         <div class="container">
             <div class="promo__info-wrapper">
-                <div class="promo__info">
+                <h1 class="promo__info">
                     <span class = 'highlighted'>Jestei Pool</span>  -  профессональный ресурс для диджеев.
-                </div>
+                </h1>
                 <div class="promo__vertical-span">
                     <span>first dj pool in Russia</span>
                 </div>
@@ -69,38 +88,38 @@
 
             <div class="promo__descr-wrapper">
                 <div class="promo__image">
-                    <img src="img/vinyl-img.png" alt="Ди-джей пульт">
+                    <img class="promo__image-gramophone" src="img/vinyl-img.png" alt="Ди-джей пульт">
+                    <div class="promo__image-gramophone-cut">
+                        <img class="promo__image-gramophone-cut" src="./img/apparat.png" alt="Ди-джей пульт">
+                    </div>
+
                     <div class="promo__image-vinyl">
                         <img src="./img/vinyl-round.png" alt="Пластинка">
                     </div>
                     <div class="promo__play-button">
-                        <img src="./img/play-button.png" alt="Кнопка Плей">
+                        <button>
+                            <img class="promo__play-button-play" src="./img/play-button.png" alt="Кнопка Плей">
+                            <img class="promo__play-button-arrow" src="./img/arrow-to-left.png" alt="">
+                            <div class="promo__get-access">
+                                получить доступ
+                            </div>
+                        </button>
                     </div>
-                    <div class="promo__get-access">
-                        получить доступ
-                    </div>
+
                 </div>
                 <div class="promo__descr">
-
-                    <h3 class = 'highlighted'>no limit</h3>
-
-
-                    <h1 class="promo__title">
+                    <div class="promo__descr-title-wrapper">
+                        <span class = 'promo__descr-no-limit highlighted'>no limit</span>
+                        <span class="promo__descr-title">
                         Безлимитный доступ
-                    </h1>
-                    <h2 class="promo__subtitle highlighted">
+                        </span>
+                    </div>
+                    <span class="promo__descr-subtitle highlighted">
                         1 рубль
-                    </h2>
-                    <span>*Первый месяц <br>
+                    </span>
+                    <span class="promo__descr-inscription">*Первый месяц <br>
                         499р./ следующий месяц
                     </span>
-
-
-
-
-
-
-
                 </div>
 
             </div>
@@ -109,8 +128,10 @@
     <section class="playlist">
         <div class="container">
             <div class="playlist__title-block animated wow fadeInUp" >
-                <img src="./img/fire-logo.png" alt="Огонек-лого" class="wow animate__animated animate__fadeInUp">
-                <h1>топ 15</h1>
+<!--                <img src="./img/fire-logo.png" alt="Огонек-лого" class="wow animate__animated animate__fadeInUp">-->
+
+                <h2>топ 15</h2>
+                <span></span>
             </div>
             <div class="playlist__content-wrapper">
 <!--PLAYLIST__LIST-ITEM=================================================================================================-->
@@ -123,7 +144,10 @@
                         </div>
                         <div class="playlist__list-item-name">
                             <div class="playlist__list-item-name-song">
-                                Большой город (RedCraft Intro)
+                                <p>
+                                    Большой город (RedCraft Intro)
+                                </p>
+
                             </div>
                             <div class="playlist__list-item-name-artist">
                                 Лауд feat. Thomas Mraz
@@ -137,13 +161,26 @@
                         </div>
                         <div class="playlist__list-item-code">101</div>
                         <div class="playlist__list-item-code">5A</div>
-                        <div class="playlist__list-item-stars">
-                            <img src="./img/star-icon-empty.png" alt="иконка-звезда">
-                            <img src="./img/star-icon-empty.png" alt="иконка-звезда">
-                            <img src="./img/star-icon-empty.png" alt="иконка-звезда">
-                            <img src="./img/star-icon-empty.png" alt="иконка-звезда">
-                            <img src="./img/star-icon-empty.png" alt="иконка-звезда">
+
+                        <div class="playlist__list-item-stars" id="reviewStars-input">
+                            <input id="star-4" type="radio" name="reviewStars"/>
+                            <label title="gorgeous" for="star-4"></label>
+
+                            <input id="star-3" type="radio" name="reviewStars"/>
+                            <label title="good" for="star-3"></label>
+
+                            <input id="star-2" type="radio" name="reviewStars"/>
+                            <label title="regular" for="star-2"></label>
+
+                            <input id="star-1" type="radio" name="reviewStars"/>
+                            <label title="poor" for="star-1"></label>
+
+                            <input id="star-0" type="radio" name="reviewStars"/>
+                            <label title="bad" for="star-0"></label>
                         </div>
+                    </div>
+                    <div class="playlist__list-item-open">
+                        <img src="img/down-shevron.png" alt="стрелка вниз">
                     </div>
                 </div>
 <!--PLAYLIST__LIST-ITEM=END=============================================================================================-->
@@ -171,13 +208,25 @@
                         </div>
                         <div class="playlist__list-item-code">101</div>
                         <div class="playlist__list-item-code">5A</div>
-                        <div class="playlist__list-item-stars">
-                            <img src="./img/star-icon-empty.png" alt="иконка-звезда">
-                            <img src="./img/star-icon-empty.png" alt="иконка-звезда">
-                            <img src="./img/star-icon-empty.png" alt="иконка-звезда">
-                            <img src="./img/star-icon-empty.png" alt="иконка-звезда">
-                            <img src="./img/star-icon-empty.png" alt="иконка-звезда">
+                        <div class="playlist__list-item-stars" id="reviewStars-input">
+                            <input id="star-4" type="radio" name="reviewStars"/>
+                            <label title="gorgeous" for="star-4"></label>
+
+                            <input id="star-3" type="radio" name="reviewStars"/>
+                            <label title="good" for="star-3"></label>
+
+                            <input id="star-2" type="radio" name="reviewStars"/>
+                            <label title="regular" for="star-2"></label>
+
+                            <input id="star-1" type="radio" name="reviewStars"/>
+                            <label title="poor" for="star-1"></label>
+
+                            <input id="star-0" type="radio" name="reviewStars"/>
+                            <label title="bad" for="star-0"></label>
                         </div>
+                    </div>
+                    <div class="playlist__list-item-open">
+                        <img src="img/down-shevron.png" alt="стрелка вниз">
                     </div>
                 </div>
 <!--PLAYLIST__LIST-ITEM=END=============================================================================================-->
@@ -205,13 +254,25 @@
                         </div>
                         <div class="playlist__list-item-code">101</div>
                         <div class="playlist__list-item-code">5A</div>
-                        <div class="playlist__list-item-stars">
-                            <img src="./img/star-icon-empty.png" alt="иконка-звезда">
-                            <img src="./img/star-icon-empty.png" alt="иконка-звезда">
-                            <img src="./img/star-icon-empty.png" alt="иконка-звезда">
-                            <img src="./img/star-icon-empty.png" alt="иконка-звезда">
-                            <img src="./img/star-icon-empty.png" alt="иконка-звезда">
+                        <div class="playlist__list-item-stars" id="reviewStars-input">
+                            <input id="star-4" type="radio" name="reviewStars"/>
+                            <label title="gorgeous" for="star-4"></label>
+
+                            <input id="star-3" type="radio" name="reviewStars"/>
+                            <label title="good" for="star-3"></label>
+
+                            <input id="star-2" type="radio" name="reviewStars"/>
+                            <label title="regular" for="star-2"></label>
+
+                            <input id="star-1" type="radio" name="reviewStars"/>
+                            <label title="poor" for="star-1"></label>
+
+                            <input id="star-0" type="radio" name="reviewStars"/>
+                            <label title="bad" for="star-0"></label>
                         </div>
+                    </div>
+                    <div class="playlist__list-item-open">
+                        <img src="img/down-shevron.png" alt="стрелка вниз">
                     </div>
                 </div>
 <!--PLAYLIST__LIST-ITEM=END=============================================================================================-->
@@ -239,13 +300,25 @@
                         </div>
                         <div class="playlist__list-item-code">101</div>
                         <div class="playlist__list-item-code">5A</div>
-                        <div class="playlist__list-item-stars">
-                            <img src="./img/star-icon-empty.png" alt="иконка-звезда">
-                            <img src="./img/star-icon-empty.png" alt="иконка-звезда">
-                            <img src="./img/star-icon-empty.png" alt="иконка-звезда">
-                            <img src="./img/star-icon-empty.png" alt="иконка-звезда">
-                            <img src="./img/star-icon-empty.png" alt="иконка-звезда">
+                        <div class="playlist__list-item-stars" id="reviewStars-input">
+                            <input id="star-4" type="radio" name="reviewStars"/>
+                            <label title="gorgeous" for="star-4"></label>
+
+                            <input id="star-3" type="radio" name="reviewStars"/>
+                            <label title="good" for="star-3"></label>
+
+                            <input id="star-2" type="radio" name="reviewStars"/>
+                            <label title="regular" for="star-2"></label>
+
+                            <input id="star-1" type="radio" name="reviewStars"/>
+                            <label title="poor" for="star-1"></label>
+
+                            <input id="star-0" type="radio" name="reviewStars"/>
+                            <label title="bad" for="star-0"></label>
                         </div>
+                    </div>
+                    <div class="playlist__list-item-open">
+                        <img src="img/down-shevron.png" alt="стрелка вниз">
                     </div>
                 </div>
 <!--PLAYLIST__LIST-ITEM=END=============================================================================================-->
@@ -273,13 +346,25 @@
                         </div>
                         <div class="playlist__list-item-code">101</div>
                         <div class="playlist__list-item-code">5A</div>
-                        <div class="playlist__list-item-stars">
-                            <img src="./img/star-icon-empty.png" alt="иконка-звезда">
-                            <img src="./img/star-icon-empty.png" alt="иконка-звезда">
-                            <img src="./img/star-icon-empty.png" alt="иконка-звезда">
-                            <img src="./img/star-icon-empty.png" alt="иконка-звезда">
-                            <img src="./img/star-icon-empty.png" alt="иконка-звезда">
+                        <div class="playlist__list-item-stars" id="reviewStars-input">
+                            <input id="star-4" type="radio" name="reviewStars"/>
+                            <label title="gorgeous" for="star-4"></label>
+
+                            <input id="star-3" type="radio" name="reviewStars"/>
+                            <label title="good" for="star-3"></label>
+
+                            <input id="star-2" type="radio" name="reviewStars"/>
+                            <label title="regular" for="star-2"></label>
+
+                            <input id="star-1" type="radio" name="reviewStars"/>
+                            <label title="poor" for="star-1"></label>
+
+                            <input id="star-0" type="radio" name="reviewStars"/>
+                            <label title="bad" for="star-0"></label>
                         </div>
+                    </div>
+                    <div class="playlist__list-item-open">
+                        <img src="img/down-shevron.png" alt="стрелка вниз">
                     </div>
                 </div>
 <!--PLAYLIST__LIST-ITEM=END=============================================================================================-->
@@ -307,13 +392,25 @@
                         </div>
                         <div class="playlist__list-item-code">101</div>
                         <div class="playlist__list-item-code">5A</div>
-                        <div class="playlist__list-item-stars">
-                            <img src="./img/star-icon-empty.png" alt="иконка-звезда">
-                            <img src="./img/star-icon-empty.png" alt="иконка-звезда">
-                            <img src="./img/star-icon-empty.png" alt="иконка-звезда">
-                            <img src="./img/star-icon-empty.png" alt="иконка-звезда">
-                            <img src="./img/star-icon-empty.png" alt="иконка-звезда">
+                        <div class="playlist__list-item-stars" id="reviewStars-input">
+                            <input id="star-4" type="radio" name="reviewStars"/>
+                            <label title="gorgeous" for="star-4"></label>
+
+                            <input id="star-3" type="radio" name="reviewStars"/>
+                            <label title="good" for="star-3"></label>
+
+                            <input id="star-2" type="radio" name="reviewStars"/>
+                            <label title="regular" for="star-2"></label>
+
+                            <input id="star-1" type="radio" name="reviewStars"/>
+                            <label title="poor" for="star-1"></label>
+
+                            <input id="star-0" type="radio" name="reviewStars"/>
+                            <label title="bad" for="star-0"></label>
                         </div>
+                    </div>
+                    <div class="playlist__list-item-open">
+                        <img src="img/down-shevron.png" alt="стрелка вниз">
                     </div>
                 </div>
 <!--PLAYLIST__LIST-ITEM=END=============================================================================================-->
@@ -341,13 +438,25 @@
                         </div>
                         <div class="playlist__list-item-code">101</div>
                         <div class="playlist__list-item-code">5A</div>
-                        <div class="playlist__list-item-stars">
-                            <img src="./img/star-icon-empty.png" alt="иконка-звезда">
-                            <img src="./img/star-icon-empty.png" alt="иконка-звезда">
-                            <img src="./img/star-icon-empty.png" alt="иконка-звезда">
-                            <img src="./img/star-icon-empty.png" alt="иконка-звезда">
-                            <img src="./img/star-icon-empty.png" alt="иконка-звезда">
+                        <div class="playlist__list-item-stars" id="reviewStars-input">
+                            <input id="star-4" type="radio" name="reviewStars"/>
+                            <label title="gorgeous" for="star-4"></label>
+
+                            <input id="star-3" type="radio" name="reviewStars"/>
+                            <label title="good" for="star-3"></label>
+
+                            <input id="star-2" type="radio" name="reviewStars"/>
+                            <label title="regular" for="star-2"></label>
+
+                            <input id="star-1" type="radio" name="reviewStars"/>
+                            <label title="poor" for="star-1"></label>
+
+                            <input id="star-0" type="radio" name="reviewStars"/>
+                            <label title="bad" for="star-0"></label>
                         </div>
+                    </div>
+                    <div class="playlist__list-item-open">
+                        <img src="img/down-shevron.png" alt="стрелка вниз">
                     </div>
                 </div>
 <!--PLAYLIST__LIST-ITEM=END=============================================================================================-->
@@ -375,13 +484,25 @@
                         </div>
                         <div class="playlist__list-item-code">101</div>
                         <div class="playlist__list-item-code">5A</div>
-                        <div class="playlist__list-item-stars">
-                            <img src="./img/star-icon-empty.png" alt="иконка-звезда">
-                            <img src="./img/star-icon-empty.png" alt="иконка-звезда">
-                            <img src="./img/star-icon-empty.png" alt="иконка-звезда">
-                            <img src="./img/star-icon-empty.png" alt="иконка-звезда">
-                            <img src="./img/star-icon-empty.png" alt="иконка-звезда">
+                        <div class="playlist__list-item-stars" id="reviewStars-input">
+                            <input id="star-4" type="radio" name="reviewStars"/>
+                            <label title="gorgeous" for="star-4"></label>
+
+                            <input id="star-3" type="radio" name="reviewStars"/>
+                            <label title="good" for="star-3"></label>
+
+                            <input id="star-2" type="radio" name="reviewStars"/>
+                            <label title="regular" for="star-2"></label>
+
+                            <input id="star-1" type="radio" name="reviewStars"/>
+                            <label title="poor" for="star-1"></label>
+
+                            <input id="star-0" type="radio" name="reviewStars"/>
+                            <label title="bad" for="star-0"></label>
                         </div>
+                    </div>
+                    <div class="playlist__list-item-open">
+                        <img src="img/down-shevron.png" alt="стрелка вниз">
                     </div>
                 </div>
 <!--PLAYLIST__LIST-ITEM=END=============================================================================================-->
@@ -409,13 +530,25 @@
                         </div>
                         <div class="playlist__list-item-code">101</div>
                         <div class="playlist__list-item-code">5A</div>
-                        <div class="playlist__list-item-stars">
-                            <img src="./img/star-icon-empty.png" alt="иконка-звезда">
-                            <img src="./img/star-icon-empty.png" alt="иконка-звезда">
-                            <img src="./img/star-icon-empty.png" alt="иконка-звезда">
-                            <img src="./img/star-icon-empty.png" alt="иконка-звезда">
-                            <img src="./img/star-icon-empty.png" alt="иконка-звезда">
+                        <div class="playlist__list-item-stars" id="reviewStars-input">
+                            <input id="star-4" type="radio" name="reviewStars"/>
+                            <label title="gorgeous" for="star-4"></label>
+
+                            <input id="star-3" type="radio" name="reviewStars"/>
+                            <label title="good" for="star-3"></label>
+
+                            <input id="star-2" type="radio" name="reviewStars"/>
+                            <label title="regular" for="star-2"></label>
+
+                            <input id="star-1" type="radio" name="reviewStars"/>
+                            <label title="poor" for="star-1"></label>
+
+                            <input id="star-0" type="radio" name="reviewStars"/>
+                            <label title="bad" for="star-0"></label>
                         </div>
+                    </div>
+                    <div class="playlist__list-item-open">
+                        <img src="img/down-shevron.png" alt="стрелка вниз">
                     </div>
                 </div>
 <!--PLAYLIST__LIST-ITEM=END=============================================================================================-->
@@ -530,10 +663,16 @@
                     </div>
                     <div class="trends__setters-artist-card-wrapper">
                         <div class="trends__setters-artist-card wow animate__animated animate__fadeInUp">
-                            <img src="./img/troy.png" alt="Диджей Тройбой">
+                            <a href="#">
+                                <img src="./img/troy.png" alt="Диджей Тройбой">
+                            </a>
+
                         </div>
                         <div class="trends__setters-artist-card wow animate__animated animate__fadeInUp">
-                            <img src="./img/diplo.png" alt="Диджей Дипло">
+                            <a href="#">
+                                <img src="./img/diplo.png" alt="Диджей Дипло">
+                            </a>
+
                         </div>
                     </div>
 
@@ -548,7 +687,11 @@
                         <div class="trends__options-item-descr wow animate__animated animate__fadeInUp">
                             <p>Трек доступен в нескольких версиях: Intro, Dirty, Clean, Instrumental, Acapella.</p>
                         </div>
-
+                        <div class="trends__options-icons-item
+                        trends__options-icons-item_implicit
+                        wow animate__animated animate__fadeInUp">
+                            <img src="./img/hand-icon-purple.png" alt="Рука" class="">
+                        </div>
                     </div>
 <!-- trends__options-item=END=======================================-->
 <!-- trends__options-item===========================================-->
@@ -558,6 +701,11 @@
                         </div>
                         <div class="trends__options-item-descr wow animate__animated animate__fadeInUp">
                             <p>Фильтр по BPM, Key, <br>Жанру, Рейтингу.</p>
+                        </div>
+                        <div class="trends__options-icons-item
+                        trends__options-icons-item_implicit
+                        wow animate__animated animate__fadeInUp">
+                            <img src="img/filter-icon-purple.png" alt="Фильтр">
                         </div>
 
                     </div>
@@ -570,6 +718,11 @@
                         <div class="trends__options-item-descr wow animate__animated animate__fadeInUp">
                             <p>Качай архивы, разбитые по жанрам и разбирай музыку офлайн.</p>
                         </div>
+                        <div class="trends__options-icons-item
+                        trends__options-icons-item_implicit
+                        wow animate__animated animate__fadeInUp">
+                            <img src="img/arrow-icon-purple.png" alt="Стрелка-вниз">
+                        </div>
 
                     </div>
 <!-- trends__options-item=END=======================================-->
@@ -580,6 +733,11 @@
                         </div>
                         <div class="trends__options-item-descr wow animate__animated animate__fadeInUp">
                             <p>Динамический Top 15 обновляется каждый день, Top 50 каждый месяц.</p>
+                        </div>
+                        <div class="trends__options-icons-item
+                        trends__options-icons-item_implicit
+                        wow animate__animated animate__fadeInUp">
+                            <img src="img/fire-icon-purple.png" alt="Огонек">
                         </div>
 
                     </div>
@@ -600,7 +758,7 @@
                         <img src="img/fire-icon-purple.png" alt="Огонек">
                     </div>
                 </div>
-<!-- trends__options-icons-BLOCK=======================================-->
+<!-- trends__options-icons-BLOCK=END======================================-->
                 <div class="trends__options-favorite">
                     <div class="trends__options-favorite-title wow animate__animated animate__fadeInUp">
                         <h4>Избранное</h4>
@@ -774,7 +932,6 @@
             </div>
         </div>
     </section>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
     <script src="js/modules/wow.min.js"></script>
     <script src = 'js/script.js'></script>

@@ -3,7 +3,7 @@
   background: linear-gradient(45deg, #090909, #242424);
   &__bg {
     background-size: cover;
-    background: url("../../../img/waves-decor-bg.png") 0 100% no-repeat;
+    background: url("../img/waves-decor-bg.png") 0 100% no-repeat;
     padding-bottom: 76px;
   }
   &__title {
@@ -57,6 +57,13 @@
       }
       & img {
         max-width: 100%;
+        transition: 0.6s all;
+        &:hover {
+          transform: scale(1.05);
+        }
+      }
+      & a:hover {
+
       }
       &-wrapper {
         display: flex;
@@ -69,6 +76,7 @@
     &-item {
       flex-basis: 25%;
       text-align: center;
+
       &-title {
         & h3 {
           color: #fff;
@@ -93,9 +101,13 @@
       text-align: center;
       //justify-content: space-around;
       &-item {
+
         flex-basis: 25%;
         & img {
           max-width: 100%;
+        }
+        &_implicit {
+          display: none;
         }
       }
     }
@@ -194,6 +206,13 @@
 @media(max-width: 991px) {
   .trends {
     padding: 216px 0 0 0;
+    &__setters-artist-card {
+      img {
+        &:hover {
+          transform: none;
+        }
+      }
+    }
     &__options {
       margin-top: 120px;
       &-item {
@@ -240,21 +259,48 @@
 @media(max-width: 767px) {
   .trends{
     //display: none;
+
     &__options {
       margin-top: 60px;
       flex-wrap: wrap;
       &-item {
         margin-top: 30px;
         flex-basis: 50%;
+        //align-content: flex-end;
+        &:last-child img {
+        transform: translateY(-10px);
+        }
+
+        &-descr {
+          height: 15%;
+          //margin: 0;
+          margin-bottom: 60px;
+        }
         & p {
+
           padding: 0 10px;
+
         }
       }
+      &-icons {
+        display: none;
+        &-item_implicit {
+          display: flex;
+          //margin-top: 60px;
+          align-self: flex-end;
+          justify-content: center;
+          align-items: flex-end;
+
+
+        }
+      }
+
     }
   }
 }
 @media(max-width: 575px) {
   .trends{
+    padding-top: 155px;
     //display: none;
     &__setters {
       & h3 {
@@ -273,7 +319,8 @@
       }
       &-favorite {
         &-title {
-          & h3 {
+          & h4 {
+            margin:0 auto;
             width: 80%;
           }
 
@@ -318,7 +365,11 @@
 }
 @media(max-width: 475px) {
   .trends {
-    padding-top: 116px;
+    padding-top: 155px;
+
+    &__bg {
+      padding-bottom: 46px;
+    }
   }
   .trends__setters {
 
@@ -340,8 +391,10 @@
     }
   }
   .trends__options {
+    margin-top: 20px;
     &-item {
       flex-basis: 100%;
+      margin-top: 16px;
       &-title {
         & h3 {
           //font-size: 16px;
@@ -350,10 +403,21 @@
         }
       }
       &-descr {
-        margin-top: 30px;
+        margin: 16px 0 0 0;
       }
     }
+    &-icons-item {
+      margin: 30px 0 0 0;
+      &:last-child img {
+        transform: none;
+      }
+
+    }
     &-favorite {
+      margin-top: 16px;
+      &-title {
+        width: 90%;
+      }
       &-panel {
         &-name {
           margin-right: 16px;
@@ -374,6 +438,15 @@
           display: none;
         }
       }
+    }
+  }
+}
+@media(max-width: 370px) {
+  .trends__title {
+    //width: 90%;
+    h4 {
+
+      font-size: 13px;
     }
   }
 }

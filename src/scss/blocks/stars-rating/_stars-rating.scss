@@ -1,0 +1,83 @@
+
+.playlist__list-item-stars input:checked ~ label,
+.playlist__list-item-stars label,
+.playlist__list-item-stars label:hover,
+.playlist__list-item-stars label:hover ~ label,
+.playlist__list-item-stars_implicit input:checked ~ label,
+.playlist__list-item-stars_implicit label,
+.playlist__list-item-stars_implicit label:hover,
+.playlist__list-item-stars_implicit label:hover ~ label {
+
+  background: url('../img/star-icons-gold.png') no-repeat;
+}
+
+.playlist__list-item-stars, .playlist__list-item-stars_implicit {
+
+  /*fix floating problems*/
+  overflow: hidden;
+  *zoom: 1;
+  /*end of fix floating problems*/
+
+  position: relative;
+  //float: left;
+}
+
+.playlist__list-item-stars input,
+.playlist__list-item-stars_implicit input{
+  filter: progid:DXImageTransform.Microsoft.Alpha(Opacity=0);
+  opacity: 0;
+  width: 43px;
+  height: 20px;
+  position: absolute;
+  top: 0;
+  z-index: 0;
+}
+
+.playlist__list-item-stars input:checked ~ label {
+  //background-position: 0px -21px;
+  //height: 20px;
+  //width: 22px;
+}
+
+.playlist__list-item-stars label,
+.playlist__list-item-stars_implicit label{
+  background-position: 0 0px;
+
+  height: 20px;
+  width: 22px;
+  float: right;
+  cursor: pointer;
+  margin-right: 1px;
+
+  position: relative;
+  z-index: 1;
+}
+
+.playlist__list-item-stars label:hover,
+.playlist__list-item-stars label:hover ~ label,
+.playlist__list-item-stars_implicit label:hover,
+.playlist__list-item-stars_implicit label:hover ~ label{
+
+  background-position: 0px -21px;
+  height: 20px;
+  //width: 22px;
+}
+
+//.playlist__list-item-stars {
+//  left: 0px;
+//}
+//.playlist__list-item-stars {
+//  left: 53px;
+//}
+//.playlist__list-item-stars {
+//  left: 106px;
+//}
+//.playlist__list-item-stars {
+//  left: 159px;
+//}
+//.playlist__list-item-stars {
+//  left: 212px;
+//}
+//#reviewStars-input #star-5 {
+//  left: 265px;
+//}

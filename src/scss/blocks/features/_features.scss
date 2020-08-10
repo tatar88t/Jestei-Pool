@@ -3,13 +3,19 @@
   background-color: rgba(0,0,0,0.8);
   background-size: contain;
   //height: 100%;
+  //height: auto;
+  //max-height: 80%;
+
 }
 
 .features__bg {
   background: url("../../../img/vinyl-bg.png") no-repeat;
   background-size: cover ;
-  max-height: 990px;
+  //max-height: 990px;
+  //height: auto;
+  min-height: 80%;
   padding: 118px 0 0 0;
+  overflow: visible;
 }
 .features__title{
   display: flex;
@@ -90,6 +96,8 @@
 .features__records {
   display: flex;
   margin: 0 auto;
+  margin-top: -10%;
+  transform: translateY(50%);
   flex-direction: row-reverse;
   justify-content: flex-end;
 
@@ -158,6 +166,7 @@
     }
   }
   .features__records {
+    margin-top: -15%;
     &-item {
       width: calc(100% / 6 - 35px);
       position: relative;
@@ -166,18 +175,20 @@
 }
 @media(max-width: 767px) {
   .features__bg {
-    background: url("../../../img/vinyl-bg.png") no-repeat;
+    background: url("../img/vinyl-bg.png") no-repeat;
     background-size: cover ;
-    max-height: 790px;
+    //max-height: 790px;
     padding: 50px 0 0 0;
   }
   .features__records {
     width: 90%;
-    margin: auto;
+    margin-top: -25%;
+    margin-right: 10%;
     &-item {
-      width: calc(100% / 6 - 29px);
+      width: calc(100% / 6 - 15px);
+      //padding: 0 10px;
       & img {
-        max-width: 420%;
+        max-width: 300%;
       }
     }
   }
@@ -207,6 +218,10 @@
 }
 @media(max-width: 575px) {
   .features {
+    &__bg {
+      //max-height: 1220px;
+      padding: 50px 0 0 0;
+    }
     &__title {
       display: block;
       & h2 {
@@ -219,14 +234,18 @@
       }
     }
     &__records {
-
-      margin-right: 50%;
+      flex-wrap: wrap;
+      width: 70%;
+      margin-top: -40%;
+      margin-right: 26%;
+      transform: translateY(25%);
       &-item {
-        flex-basis: 12%;
-        //width: 100%;
+        margin: 20px 0px;
+        flex-basis: 28%;
+        padding: 0 7px;
 
         & img {
-          //width: 100%;
+
         }
       }
     }
@@ -235,9 +254,25 @@
 @media(max-width: 475px) {
   .features {
     position: relative;
+    height: auto;
 
     &__bg {
+      //max-height: 1090px;
+      height: auto;
+      padding: 50px 0 0px 0;
+    }
+    &__records {
+      width: 75%;
+      margin-top: -32%;
+      margin-right: 22%;
+      transform: translateY(17%);
+      &-item {
+        padding: 0 10px;
+        flex-basis: 35%;
+        & img {
 
+        }
+      }
     }
     &__title {
       & h2 {
@@ -256,22 +291,22 @@
         &:first-child:before {
           content: '';
           width: 30%;
-          background: url("../../../img/disc-intro.png") no-repeat;
+          background: url("../img/disc-intro.png") no-repeat;
           background-size: contain;
           height: 100%;
           right: 10px;
-          top: 35%;
+          top: 15%;
           position: absolute;
 
         }
         &:last-child:after {
           content: '';
           width: 30%;
-          background: url("../../../img/disc-mash.png") no-repeat;
+          background: url("../img/disc-mash.png") no-repeat;
           background-size: contain;
           height: 100%;
           right: 10px;
-          top: 60%;
+          top: 32%;
           position: absolute;
         }
 
@@ -293,9 +328,19 @@
     }
   }
 }
-@media(max-width: 350px) {
-  .features__bg {
-    max-height: 860px;
+@media(max-width: 370px) {
+  .features {
+    &__bg {
+    }
+    &__records {
+      width: 80%;
+      margin-right: 19%;
+      &-item {
+        & img {
+
+        }
+      }
+    }
   }
 
 }

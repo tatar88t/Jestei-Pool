@@ -96,6 +96,10 @@
 "use strict";
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _modules_showMenu__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! ./modules/showMenu */ "./src/js/modules/showMenu.js");
+/* harmony import */ var _modules_showPlaylistFeatures__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! ./modules/showPlaylistFeatures */ "./src/js/modules/showPlaylistFeatures.js");
+/* harmony import */ var _modules_rating__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! ./modules/rating */ "./src/js/modules/rating.js");
+
+
 
 new WOW().init();
 var header = $('.header'),
@@ -123,6 +127,33 @@ $(".footer__up, .benefits__button a").click(function () {
   return false;
 });
 Object(_modules_showMenu__WEBPACK_IMPORTED_MODULE_0__["default"])();
+Object(_modules_showPlaylistFeatures__WEBPACK_IMPORTED_MODULE_1__["default"])();
+Object(_modules_rating__WEBPACK_IMPORTED_MODULE_2__["default"])();
+
+/***/ }),
+
+/***/ "./src/js/modules/rating.js":
+/*!**********************************!*\
+  !*** ./src/js/modules/rating.js ***!
+  \**********************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function rating() {
+  let stars = document.querySelectorAll('.playlist__list-item-stars label');
+  stars.forEach(star => star.addEventListener('click', e => {
+    e.preventDefault();
+    let chosen = document.querySelectorAll('.playlist__list-item-stars label:hover, .playlist__list-item-stars label:hover ~ label');
+    chosen.forEach(mark => {
+      console.log(mark);
+      mark.style.cssText = "background-position: 0px -21px";
+    });
+  }));
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (rating);
 
 /***/ }),
 
@@ -142,10 +173,77 @@ function showMenu() {
     menu.classList.toggle('menu_active');
     trigger.classList.toggle('header__burger_active');
   });
+  window.addEventListener('resize', () => {
+    menu.classList.remove('menu_active');
+    trigger.classList.remove('header__burger_active');
+  });
 }
 
 ;
 /* harmony default export */ __webpack_exports__["default"] = (showMenu);
+
+/***/ }),
+
+/***/ "./src/js/modules/showPlaylistFeatures.js":
+/*!************************************************!*\
+  !*** ./src/js/modules/showPlaylistFeatures.js ***!
+  \************************************************/
+/*! exports provided: default */
+/***/ (function(module, __webpack_exports__, __webpack_require__) {
+
+"use strict";
+__webpack_require__.r(__webpack_exports__);
+function showPlaylistFeatures() {
+  let trigger = document.querySelectorAll('.playlist__list-item-open');
+  let playlistItem = document.querySelectorAll('.playlist__list-item');
+
+  const createFeatures = () => {
+    let attrUp = "img/up-shevron.png";
+    let attrDown = "img/down-shevron.png";
+    playlistItem.forEach(item => {
+      let playlistFeatures = item.parentNode.insertBefore(document.createElement('div'), item.nextSibling);
+      playlistFeatures.classList.add('playlist__features');
+      let stars = item.querySelector('.playlist__list-item-stars'); // console.log(stars.innerHTML)
+
+      playlistFeatures.innerHTML = `
+            <div class="playlist__list-item-icon_implicit">
+                <img src="./img/r-sign-icon.png">
+            </div>
+            <div class="playlist__list-item-code_implicit">101</div>
+            <div class="playlist__list-item-code_implicit">5A</div>
+            <div class="playlist__list-item-stars_implicit">
+                ${stars.innerHTML}
+<!--                <img src="./img/star-icon-empty.png" alt="иконка-звезда">-->
+<!--                <img src="./img/star-icon-empty.png" alt="иконка-звезда">-->
+<!--                <img src="./img/star-icon-empty.png" alt="иконка-звезда">-->
+<!--                <img src="./img/star-icon-empty.png" alt="иконка-звезда">-->
+<!--                <img src="./img/star-icon-empty.png" alt="иконка-звезда">-->
+            </div>
+
+        `;
+    });
+    trigger.forEach(btn => {
+      btn.addEventListener('click', e => {
+        btn.parentNode.nextSibling.classList.toggle('playlist__features_active');
+
+        if (btn.childNodes[1].getAttribute('src') === attrDown) {
+          btn.childNodes[1].setAttribute("src", attrUp);
+        } else {
+          btn.childNodes[1].setAttribute("src", attrDown);
+        }
+
+        window.addEventListener('resize', () => {
+          btn.parentNode.nextSibling.classList.remove('playlist__features_active');
+          btn.childNodes[1].setAttribute("src", attrDown);
+        });
+      });
+    });
+  };
+
+  createFeatures();
+}
+
+/* harmony default export */ __webpack_exports__["default"] = (showPlaylistFeatures);
 
 /***/ })
 
